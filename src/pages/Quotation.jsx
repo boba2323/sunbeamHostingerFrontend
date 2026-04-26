@@ -22,16 +22,11 @@ export default function Quotation() {
 
   const onSubmit = async (data) => {
 
-      console.log("===== FORM DATA SUBMITTED =====");
-      console.table(data);   // 🔥 BEST for forms
-      console.log("Raw Object:", data);
-
-
     setStatus("Sending...");
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/quotation-form/",
+        `${import.meta.env.VITE_API_URL}/quotation-form/`,
         data
       );
 

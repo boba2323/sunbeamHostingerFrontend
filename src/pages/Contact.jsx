@@ -29,7 +29,7 @@ export default function ContactUs() {
     try {
 
 
-      const response = await axios.post("http://localhost:8000/contact-form/", data);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/contact-form/`, data);
 
       if (response.data.success) {
         setStatus("✅ Message sent successfully!");
